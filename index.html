@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function getRandomInt(max)
+        {
+            return Math.floor(Math.random() * max);
+        }
+
+        function getRandomChoice()
+        {
+            //i dont plan to use these variables other places so i can just define them here
+            const value = getRandomInt(3);
+
+            if (value === 1)
+            {
+                return "paper";
+            }
+            else if (value === 2)
+            {
+                return "rock";
+            }
+            else
+            {
+                return "scissors";
+            }
+
+        }
+    </script>
+</body>
+</html>
