@@ -41,7 +41,7 @@
         let humanScore = 0;
         let computerScore = 0;
 
-        function winconditions(playerChoice, computerChoice) // reminder to myself that a variable inside a function cant have the same name as the parameter
+        function winConditions(playerChoice, computerChoice) // reminder to myself that a variable inside a function cant have the same name as the parameter
         {
             if(playerChoice === "rock" && computerChoice === "paper")
             {
@@ -77,13 +77,42 @@
         {
             playerChoice = playerChoice.toLowerCase();
             //uncommenting this block and having the selection here
-            return winconditions(playerChoice, computerChoice)
+            return winConditions(playerChoice, computerChoice)
 
         }
-        const humanSelection = humanChoice();
-        const computerSelection = getRandomChoice();
 
-        console.log(playRound(humanSelection, computerSelection));
+        function playGame()
+        {
+            let playerchoice;
+            let computerchoice;
+
+            for(let i = 0; i<5; i++)
+            {
+                playerchoice = humanChoice();
+                computerchoice = getRandomChoice();
+
+                alert(playRound(playerchoice, computerchoice));
+            }
+
+            if(computerScore > humanScore)
+            {
+                return "Computer wins";
+            }else if (humanScore > computerScore)
+            {
+                return "Human wins";
+            }
+            else
+            {
+                return "Tie";
+            }
+
+
+        }
+
+        playGame();
+     
+        
+        
 
     </script>
 </body>
