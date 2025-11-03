@@ -46,27 +46,27 @@
             if(playerChoice === "rock" && computerChoice === "paper")
             {
                 computerScore+=1;
-                return "s"
+                return "Computer wins, paper beats rock"
             } else if(playerChoice === "paper" && computerChoice === "rock")
             {   
                 humanScore+=1
-                return "a"
+                return "You win, paper beats rock"
             } else if(playerChoice === "scissors" && computerChoice === "paper")
             {       
                 humanScore+=1
-                return "d"
+                return "You win, scissors beat paper"
             }else if(playerChoice === "paper" && computerChoice === "scissors")
             {
                 computerScore+=1
-                return "d"
+                return "Computer wins, scissors beat paper"
             }else if(playerChoice=== "rock" && computerChoice === "scissors")
             {
                 humanScore+=1
-                return "e"
+                return "You win, rock beats scissors"
             }else if(playerChoice === "scissors" && computerChoice === "rock")
             {
                 computerScore+=1
-                return "n"
+                return "Computer wins, rock beats scissors"
             }else
             {
                 return "It was a tie";
@@ -96,10 +96,10 @@
 
             if(computerScore > humanScore)
             {
-                return "Computer wins";
+                return "Computer wins " + computerScore + " to " + humanScore;
             }else if (humanScore > computerScore)
             {
-                return "Human wins";
+                return "Human wins " + humanScore + " to " + computerScore;
             }
             else
             {
@@ -109,7 +109,7 @@
 
         }
 
-        playGame();
+        alert(playGame());
      
         
         
