@@ -25,7 +25,11 @@ function getRandomInt(max)
 
         function humanChoice()
         {
-            choice = prompt("Enter your choice");
+            do
+            {   
+                choice = prompt("Enter your choice");
+            }while(choice != "rock" && choice !="scissors" && choice != "paper");
+
             return choice;
         }
 
