@@ -23,50 +23,63 @@ function getRandomInt(max)
 
         }
 
-        function humanChoice()
-        {
-            do
-            {   
-                choice = prompt("Enter your choice");
-            }while(choice != "rock" && choice !="scissors" && choice != "paper");
+        // function humanChoice()
+        // {
+        //     do
+        //     {   
+        //         choice = prompt("Enter your choice");
+        //     }while(choice != "rock" && choice !="scissors" && choice != "paper");
 
-            return choice;
-        }
+        //     return choice;
+        // }
 
         let humanScore = 0;
         let computerScore = 0;
+
+
+        const div = document.createElement("div");
+        document.body.appendChild(div);
 
         function winConditions(playerChoice, computerChoice) // reminder to myself that a variable inside a function cant have the same name as the parameter
         {
             if(playerChoice === "rock" && computerChoice === "paper")
             {
                 computerScore+=1;
-                return "Computer wins, paper beats rock"
+                div.textContent = "Computer wins, paper beats rock"
             } else if(playerChoice === "paper" && computerChoice === "rock")
             {   
                 humanScore+=1
-                return "You win, paper beats rock"
+                div.textContent = "You win, paper beats rock"
             } else if(playerChoice === "scissors" && computerChoice === "paper")
             {       
                 humanScore+=1
-                return "You win, scissors beat paper"
+                div.textContent = "You win, scissors beat paper"
             }else if(playerChoice === "paper" && computerChoice === "scissors")
             {
                 computerScore+=1
-                return "Computer wins, scissors beat paper"
+                div.textContent = "Computer wins, scissors beat paper"
             }else if(playerChoice=== "rock" && computerChoice === "scissors")
             {
                 humanScore+=1
-                return "You win, rock beats scissors"
+                 div.textContent = "You win, rock beats scissors"
             }else if(playerChoice === "scissors" && computerChoice === "rock")
             {
                 computerScore+=1
-                return "Computer wins, rock beats scissors"
+                div.textContent = "Computer wins, rock beats scissors"
             }else
             {
-                return "It was a tie";
+                 div.textContent = "It was a tie";
+            }
+
+            if(humanScore == 5)
+            {
+             div.textContent += "You win ${humanScore} to ${computerScore}";
+            } else if(computerScore == 5)
+            {
+             div.textContent += "Computer wins ${computerScore} to ${humanScore}";
             }
         }
+
 
         function playRound(playerChoice,computerChoice)
         {
@@ -81,13 +94,12 @@ function getRandomInt(max)
             let playerchoice;
             let computerchoice;
 
-            for(let i = 0; i<5; i++)
-            {
-                playerchoice = humanChoice();
-                computerchoice = getRandomChoice();
+            
+            playerchoice = humanChoice();
+            computerchoice = getRandomChoice();
 
-                alert(playRound(playerchoice, computerchoice));
-            }
+            // alert(playRound(playerchoice, computerchoice));
+            
 
             if(computerScore > humanScore)
             {
@@ -104,4 +116,39 @@ function getRandomInt(max)
 
         }
 
-        alert(playGame());
+        // alert(playGame());
+
+
+    const rock = document.querySelector("#rock");
+    const paper = document.querySelector("#paper");
+    const scissors = document.querySelector("#scissors");
+
+
+    rock.addEventListener('click', () =>
+    {
+        const computer = getRandomChoice();
+        playRound("rock",computer);
+
+        
+    });
+
+
+    paper.addEventListener('click', () =>
+    {
+        const computer = getRandomChoice();
+        playRound("paper",computer);
+        
+    
+    
+    });
+
+
+    scissors.addEventListener('click', () =>
+    {
+        const computer = getRandomChoice();
+        playRound("scissors",computer);
+    
+    });
+
+   
+  
