@@ -45,27 +45,27 @@ function getRandomInt(max)
             if(playerChoice === "rock" && computerChoice === "paper")
             {
                 computerScore+=1;
-                div.textContent = "Computer wins, paper beats rock"
+                div.textContent = "Computer wins, paper beats rock\n"
             } else if(playerChoice === "paper" && computerChoice === "rock")
             {   
                 humanScore+=1
-                div.textContent = "You win, paper beats rock"
+                div.textContent = "You win, paper beats rock\n"
             } else if(playerChoice === "scissors" && computerChoice === "paper")
             {       
                 humanScore+=1
-                div.textContent = "You win, scissors beat paper"
+                div.textContent = "You win, scissors beat paper\n"
             }else if(playerChoice === "paper" && computerChoice === "scissors")
             {
                 computerScore+=1
-                div.textContent = "Computer wins, scissors beat paper"
+                div.textContent = "Computer wins, scissors beat paper\n"
             }else if(playerChoice=== "rock" && computerChoice === "scissors")
             {
                 humanScore+=1
-                 div.textContent = "You win, rock beats scissors"
+                 div.textContent = "You win, rock beats scissors\n"
             }else if(playerChoice === "scissors" && computerChoice === "rock")
             {
                 computerScore+=1
-                div.textContent = "Computer wins, rock beats scissors"
+                div.textContent = "Computer wins, rock beats scissors\n"
             }else
             {
                  div.textContent = "It was a tie";
@@ -73,10 +73,10 @@ function getRandomInt(max)
 
             if(humanScore == 5)
             {
-             div.textContent += "You win ${humanScore} to ${computerScore}";
+             div.textContent += "You win " + humanScore + "to " + computerScore;
             } else if(computerScore == 5)
             {
-             div.textContent += "Computer wins ${computerScore} to ${humanScore}";
+             div.textContent += "Computer wins " + computerScore + "to " + humanScore;
             }
         }
 
